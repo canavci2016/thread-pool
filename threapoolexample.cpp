@@ -5,8 +5,10 @@
 int main(int argc, char **argv)
 {
 
-    Can::ThreadPool pool;
-
+    uint32_t thread_count = std::thread::hardware_concurrency();
+    std::cout << "supported thread count by os: " << thread_count << std::endl;
+    
+    Can::ThreadPool pool(thread_count);
     pool.Start();
 
     char c;
