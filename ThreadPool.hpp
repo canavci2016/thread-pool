@@ -25,6 +25,7 @@ namespace Can
         bool should_terminate = false; // Tells threads to stop looking for jobs
 
     public:
+        ThreadPool(uint16_t pool_size);
         void Start();
         void QueueJob(const std::function<void()> &job);
         void Stop();
