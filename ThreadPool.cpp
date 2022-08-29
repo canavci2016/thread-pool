@@ -11,6 +11,11 @@ each thread should be running its own infinite loop, constantly waiting for new 
 
 */
 
+Can::ThreadPool::ThreadPool(uint16_t pool_size)
+{
+    this->pool_size = pool_size;
+}
+
 void Can::ThreadPool::Start()
 {
     const uint16_t num_threads = std::thread::hardware_concurrency(); // Max # of threads the system supports
